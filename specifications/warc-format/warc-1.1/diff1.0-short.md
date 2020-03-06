@@ -129,10 +129,9 @@ https://github.com/iipc/warc-specifications/issues/62
 > 'https' is defined as its ~~'entity-body' (per \[RFC2616\]), with any~~
 > ~~transfer-encoding removed.~~**'entity- body' (as specified in \[RFC 2616\]).**
 
-WARC/1.1 request bodies should have the Transfer-Encoding intact, whereas WARC/1.0 were supposed to have it removed.
-Although I have not checked, I doubt that many tools ever followed the 1.0 spec here, if any at all. Many tools don't support transfer-encoded requests anyway (e.g. wget), and request bodies are quite rare in the context of web crawling. However, this should be investigated.
+The `entity-body` always has the transfer encoding removed, so this is not a change, only a clarification. https://github.com/iipc/warc-specifications/issues/22
 
-https://github.com/iipc/warc-specifications/issues/22
+Note that many WARC-writing tools do not handle this situation correctly, both in the context of requests and responses: https://github.com/webrecorder/warcio/issues/74
 
 > ### Profile: Identical Payload Digest
 > 
